@@ -268,6 +268,8 @@ const authOptions: AuthOptions = {
 describe('auth federation unit test', () => {
 	beforeAll(() => {
 		Credentials.clear();
+		clearMockGAPI;
+		clearMockFB;
 	});
 	describe('currentUserCredentials test', () => {
 		test(

@@ -286,6 +286,9 @@ const authCallbacks = {
 const USER_ADMIN_SCOPE = 'aws.cognito.signin.user.admin';
 
 describe('auth unit test', () => {
+	beforeAll(() => {
+		Credentials.clear();
+	});
 	describe('signUp', () => {
 		test('happy case with object attr', async () => {
 			const spyon = jest.spyOn(CognitoUserPool.prototype, 'signUp');

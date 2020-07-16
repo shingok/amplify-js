@@ -266,6 +266,9 @@ const authOptions: AuthOptions = {
 };
 
 describe('auth federation unit test', () => {
+	beforeAll(() => {
+		Credentials.clear();
+	});
 	describe('currentUserCredentials test', () => {
 		test(
 			'with expired google federated info - network error retries',

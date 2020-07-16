@@ -266,12 +266,12 @@ const authOptions: AuthOptions = {
 };
 
 describe('auth federation unit test', () => {
-	beforeAll(() => {
-		Credentials.clear();
-		clearMockGAPI;
-		clearMockFB;
-	});
 	describe('currentUserCredentials test', () => {
+		beforeEach(() => {
+			Credentials.clear();
+			clearMockGAPI;
+			clearMockFB;
+		});
 		test(
 			'with expired google federated info - network error retries',
 			async () => {
